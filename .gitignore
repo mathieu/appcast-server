@@ -18,3 +18,4 @@ _yardoc
 doc/
 db/development.sqlite3
 log/*.log
+.idea
