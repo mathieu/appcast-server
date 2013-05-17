@@ -3,10 +3,25 @@
 _Appcasting made easy_
 
 ## Design ideas
-1. automatic appcast feed generation :
-   - http://appcast-server/product/feed
-2. Web base interface to create new entries
+1. Anonymous : automatic appcast feed generation :
+   - http://appcast-server/feed/product (rss+xml)
+   - http://appcast-server/feed/product/version/relnote (release notes html)
+   - http://appcast-server/feed/product/version/myapp-version.exe (binary)
 
+2. Authenticated : web base interface to create new entries
+   - User needs to be connected
+   - User has a list of products
+   - Product has a list of Versions
+   - Version has :
+       - title
+       - date
+       - desctiption
+       - release notes
+       - file
+    - File has :
+       - name
+       - length
+       - type
 
 --------------
 
