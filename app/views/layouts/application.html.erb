@@ -40,15 +40,18 @@
             <div class="masthead">
                 <%= render 'layouts/user_header' %>
                 <h3 class="muted"><%= link_to "Appcast server", root_path %></h3>
-                <h5 class="muted">Appcasting made easy</h5>
+                <h5 class="muted"><em>Appcasting made easy</em></h5>
             </div>
             <hr />
+
+            <!-- boostrap -->
+            <%= bootstrap_flash %>
+
             <%= yield %>
 
 
             <footer>
               <hr />
-
               <p>&copy; Appserver 2013</p>
             </footer>
 
