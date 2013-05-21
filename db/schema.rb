@@ -11,7 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130517164347) do
+ActiveRecord::Schema.define(:version => 20130521081122) do
+
+  create_table "items", :force => true do |t|
+    t.string   "title"
+    t.string   "version"
+    t.text     "description"
+    t.text     "relnotes"
+    t.datetime "pub_date"
+    t.string   "enclosure_name"
+    t.string   "enclosure_type"
+    t.integer  "enclosure_length"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
