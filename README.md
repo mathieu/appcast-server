@@ -11,17 +11,15 @@ _Appcasting made easy_
 2. Authenticated : web base interface to create new entries
    - User needs to be connected
    - User has a list of products
-   - Product has a list of Versions
+   - Product has a list of Items
    - Version has :
        - title
        - date
        - desctiption
        - release notes
-       - file
-    - File has :
-       - name
-       - length
-       - type
+       - file_name
+       - file_length
+       - file_type
 
 --------------
 
