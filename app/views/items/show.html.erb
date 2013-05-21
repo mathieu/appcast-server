@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @item.title %>
+</p>
+
+<p>
+  <b>Version:</b>
+  <%= @item.version %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @item.description %>
+</p>
+
+<p>
+  <b>Relnotes:</b>
+  <%= @item.relnotes %>
+</p>
+
+<p>
+  <b>Pub date:</b>
+  <%= @item.pub_date %>
+</p>
+
+<p>
+  <b>Enclosure name:</b>
+  <%= @item.enclosure_name %>
+</p>
+
+<p>
+  <b>Enclosure type:</b>
+  <%= @item.enclosure_type %>
+</p>
+
+<p>
+  <b>Enclosure length:</b>
+  <%= @item.enclosure_length %>
+</p>
+
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>

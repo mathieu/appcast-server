@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  version: MyString
+  description: MyText
+  relnotes: MyText
+  pub_date: 2013-05-21 10:11:22
+  enclosure_name: MyString
+  enclosure_type: MyString
+  enclosure_length: 1
+
+two:
+  title: MyString
+  version: MyString
+  description: MyText
+  relnotes: MyText
+  pub_date: 2013-05-21 10:11:22
+  enclosure_name: MyString
+  enclosure_type: MyString
+  enclosure_length: 1
