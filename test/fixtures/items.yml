@@ -1,21 +1,21 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  title: MyString
-  version: MyString
-  description: MyText
-  relnotes: MyText
-  pub_date: 2013-05-21 10:11:22
-  enclosure_name: MyString
-  enclosure_type: MyString
-  enclosure_length: 1
+  title: MyApp 1.0
+  version: 1.0
+  description: my description
+  relnotes: my relnotes
+  pub_date: 2013-04-21 12:31:56
+  enclosure_name: MyApp-1.0.zip
+  enclosure_type: application/octet-stream
+  enclosure_length: 160000
 
 two:
-  title: MyString
-  version: MyString
-  description: MyText
-  relnotes: MyText
+  title: MyApp 2.0
+  version: 2.0
+  description: my description
+  relnotes: my relnotes
   pub_date: 2013-05-21 10:11:22
-  enclosure_name: MyString
-  enclosure_type: MyString
-  enclosure_length: 1
+  enclosure_name: MyApp-2.0.zip
+  enclosure_type: application/octet-stream
+  enclosure_length: 170000
