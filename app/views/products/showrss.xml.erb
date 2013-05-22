@@ -1,0 +1,29 @@
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title> <%= @product.title %></title>
+        <link><%= product_path(@product)%></link>
+        <description><%= @product.description %></description>
+        <language>en</language>
+
+
+        <% @product.items.each do |item| %>
+          <item>
+            <title><%= item.title %></title>
+
+            <description>
+              <%= item.description %>
+            </description>
+
+            <pubDate>
+              <%= item.pub_date %>
+            </pubDate>
+            <enclosure url="{{ version.download_link }}"></enclosure>
+
+          </item>
+        <% end %>
+
+
+
+
+    </channel>
+</rss>

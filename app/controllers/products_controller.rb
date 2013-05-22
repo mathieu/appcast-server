@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
 
-  before_filter :authenticate_user!
+  before_filter :authenticate_user! , :except => [:showrss]
+  respond_to :xml
 
   # GET /products
   # GET /products.json
@@ -21,6 +22,15 @@ class ProductsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @product }
+    end
+  end
+
+  # GET /products/1.xml
+  def showrss
+    @product = Product.find(params[:id])
+
+    respond_to do |format|
+      format.xml # showrss.xml.erb
     end
   end
 

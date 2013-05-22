@@ -2,7 +2,7 @@ AppcastServer::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
-  root :to => "home#index"
+  root :to => "products#index"
 
 
   ActiveAdmin.routes(self)
@@ -13,6 +13,7 @@ AppcastServer::Application.routes.draw do
 
   devise_for :users
 
+  match '/products/:id.xml'=>'products#showrss', :format=>false, :defaults=>{:format=>'xml'}
 
   resources :products do
     resources :items
