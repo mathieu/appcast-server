@@ -1,29 +1,33 @@
-<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+<?xml version="1.0" encoding="utf-8"?>
+<rss
+	version="2.0"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"
+	xmlns:fervor="https://github.com/pypt/fervor"
+	xmlns:dc="http://purl.org/dc/elements/1.1/">
+
     <channel>
         <title> <%= @product.title %></title>
-        <link><%= product_path(@product)%></link>
+        <link><%= product_url(@product, :format => :xml)%></link>
+        <atom:link href="<%= product_url(@product, :format => :xml)%>" rel="self" type="application/rss+xml" />
         <description><%= @product.description %></description>
         <language>en</language>
-
-
-        <% @product.items.each do |item| %>
-          <item>
+    <% @product.items.each do |item| %>
+        <item>
             <title><%= item.title %></title>
 
-            <description>
-              <%= item.description %>
-            </description>
+            <link><%= product_item_url(@product, item) %></link>
+		    <sparkle:releaseNotesLink><%= product_item_url(@product, item) %></sparkle:releaseNotesLink>
 
-            <pubDate>
-              <%= item.pub_date %>
-            </pubDate>
-            <enclosure url="{{ version.download_link }}"></enclosure>
-
-          </item>
-        <% end %>
-
-
-
-
-    </channel>
+            <pubDate><%= item.pub_date %></pubDate>
+            <enclosure url="<%= root_url + item.enclosure.url %>"
+                       sparkle:version="<%= item.version %>"
+                       fervor:version="<%= item.version %>"
+                       length="<%= item.enclosure_file_size %>"
+                       type="<%= item.enclosure_content_type %>"
+                       sparkle:md5="<%= item.enclosure_fingerprint %>"
+                       />
+        </item>
+    <% end %>
+   </channel>
 </rss>

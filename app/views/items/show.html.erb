@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+
 <p>
   <b>Title:</b>
   <%= @item.title %>
@@ -26,20 +27,21 @@
 </p>
 
 <p>
-  <b>Enclosure name:</b>
-  <%= @item.enclosure_name %>
+  <b>Enclosure file name:</b>
+  <%= @item.enclosure_file_name %>
 </p>
 
 <p>
-  <b>Enclosure type:</b>
-  <%= @item.enclosure_type %>
+  <b>Enclosure content type:</b>
+  <%= @item.enclosure_content_type %>
 </p>
 
 <p>
-  <b>Enclosure length:</b>
-  <%= @item.enclosure_length %>
+  <b>Enclosure file size:</b>
+  <%= @item.enclosure_file_size %>
 </p>
 
 
 <%= link_to 'Edit', edit_product_item_path(@product, @item) %> |
 <%= link_to 'Back', product_items_path(@product) %>
+
