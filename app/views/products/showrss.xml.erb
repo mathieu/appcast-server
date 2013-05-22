@@ -16,8 +16,8 @@
         <item>
             <title><%= item.title %></title>
 
-            <link><%= product_item_url(@product, item) %></link>
-		    <sparkle:releaseNotesLink><%= product_item_url(@product, item) %></sparkle:releaseNotesLink>
+            <link><%= product_item_url(@product, item) %>/relnotes</link>
+		    <sparkle:releaseNotesLink><%= product_item_url(@product, item) %>/relnotes</sparkle:releaseNotesLink>
 
             <pubDate><%= item.pub_date %></pubDate>
             <enclosure url="<%= root_url + item.enclosure.url %>"
