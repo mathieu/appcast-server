@@ -15,7 +15,7 @@ gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) support
 gem "twitter-bootstrap-rails"
 gem "activeadmin" # http://0.0.0.0:3000/admin
 gem 'meta_search', '>= 1.1.0.pre'
-
+gem 'friendly_id'
 
 group :development do
   gem 'awesome_print'
