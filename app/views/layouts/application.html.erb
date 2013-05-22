@@ -62,5 +62,13 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <%= javascript_include_tag "application" %>
 
+        <script>
+            var editor = new wysihtml5.Editor("wysihtml5-textarea", {
+                toolbar:      "wysihtml5-toolbar",
+                stylesheets:  "<%= stylesheet_path('wysiwyg') %>",
+                parserRules:  wysihtml5ParserRules
+            });
+        </script>
+
   </body>
 </html>

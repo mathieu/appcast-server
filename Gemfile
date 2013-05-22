@@ -17,6 +17,7 @@ gem 'activeadmin' # http://0.0.0.0:3000/admin
 gem 'meta_search', '>= 1.1.0.pre'
 gem 'friendly_id'
 gem 'paperclip'
+gem 'wysihtml5-rails'
 
 group :development do
   gem 'awesome_print'
