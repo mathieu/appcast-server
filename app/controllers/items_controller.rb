@@ -2,10 +2,11 @@ class ItemsController < ApplicationController
 
   before_filter :authenticate_user!
 
-  # GET /items
-  # GET /items.json
+  # GET /products/:product_id/items
+  # GET /products/:product_id/items.json
   def index
-    @items = Item.all
+    @product = Product.find(params[:product_id])
+    @items = @product.items
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,10 +14,11 @@ class ItemsController < ApplicationController
     end
   end
 
-  # GET /items/1
-  # GET /items/1.json
+  # GET /products/:product_id/items/1
+  # GET /products/:product_id/items/1.json
   def show
-    @item = Item.find(params[:id])
+    @product = Product.find(params[:product_id])
+    @item = @product.items.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,10 +26,13 @@ class ItemsController < ApplicationController
     end
   end
 
-  # GET /items/new
-  # GET /items/new.json
+  # GET /products/:product_id/items/new
+  # GET /products/:product_id/items/new.json
   def new
+    @product = Product.find(params[:product_id])
     @item = Item.new
+
+    @item.product = @product
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,19 +40,23 @@ class ItemsController < ApplicationController
     end
   end
 
-  # GET /items/1/edit
+  # GET /products/:product_id/items/1/edit
   def edit
-    @item = Item.find(params[:id])
+    @product = Product.find(params[:product_id])
+    @item = @product.items.find(params[:id])
   end
 
-  # POST /items
-  # POST /items.json
+  # POST /products/:product_id/items
+  # POST /products/:product_id/items.json
   def create
+    @product = Product.find(params[:product_id])
     @item = Item.new(params[:item])
+
+    @item.product  =  @product
 
     respond_to do |format|
       if @item.save
-        format.html { redirect_to @item, notice: 'Item was successfully created.' }
+        format.html { redirect_to product_item_url(@product,@item), notice: 'Item was successfully created.' }
         format.json { render json: @item, status: :created, location: @item }
       else
         format.html { render action: "new" }
@@ -56,10 +65,12 @@ class ItemsController < ApplicationController
     end
   end
 
-  # PUT /items/1
-  # PUT /items/1.json
+  # PUT /products/:product_id/items/1
+  # PUT /products/:product_id/items/1.json
   def update
-    @item = Item.find(params[:id])
+
+    @product = Product.find(params[:product_id])
+    @item =  @product.items.find(params[:id])
 
     respond_to do |format|
       if @item.update_attributes(params[:item])
@@ -72,14 +83,15 @@ class ItemsController < ApplicationController
     end
   end
 
-  # DELETE /items/1
-  # DELETE /items/1.json
+  # DELETE /products/:product_id/items/1
+  # DELETE /products/:product_id/items/1.json
   def destroy
-    @item = Item.find(params[:id])
+    @product = Product.find(params[:product_id])
+    @item = @product.items.find(params[:id])
     @item.destroy
 
     respond_to do |format|
-      format.html { redirect_to items_url }
+      format.html { redirect_to product_items_url(@product) }
       format.json { head :no_content }
     end
   end

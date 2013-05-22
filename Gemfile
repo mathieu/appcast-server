@@ -13,6 +13,20 @@ gem 'devise'
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
+gem "activeadmin" # http://0.0.0.0:3000/admin
+gem 'meta_search', '>= 1.1.0.pre'
+
+
+group :development do
+  gem 'awesome_print'
+  gem "better_errors"  # http://0.0.0.0:3000/__better_errors
+  gem "binding_of_caller"
+  gem 'meta_request', '0.2.1' # http://0.0.0.0:3000/rails/routes
+  gem 'sextant'
+  gem 'quiet_assets'
+
+end
+
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -1,13 +1,23 @@
 AppcastServer::Application.routes.draw do
-  resources :products
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
+  root :to => "home#index"
 
 
-  resources :items
+  ActiveAdmin.routes(self)
+
 
 
   get "home/index"
 
   devise_for :users
+
+
+  resources :products do
+    resources :items
+  end
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -66,5 +76,5 @@ AppcastServer::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
 
-  root :to => "home#index"
+
 end

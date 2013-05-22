@@ -10,7 +10,12 @@ class CreateItems < ActiveRecord::Migration
       t.string :enclosure_type
       t.integer :enclosure_length
 
+      t.references :product
+
       t.timestamps
     end
+
+    add_index :items, :product_id
+
   end
 end

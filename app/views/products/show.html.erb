@@ -16,5 +16,12 @@
 </p>
 
 
+<p>Items</p>
+<%= render @product.items %>
+
+<%= link_to 'Add tem', new_product_item_path(@product) %>
+
+<br/>
+
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
