@@ -1,4 +1,4 @@
-<%= form_for [@product, @item], :html => {:multipart => true} do |f| %>
+<%= form_for [@product, @item], :html => {:multipart => true, :class => 'form-horizontal'} do |f| %>
     <% if @item.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
@@ -11,62 +11,48 @@
         </div>
     <% end %>
 
-    <div class="field">
-      <%= f.label :title %>
-      <br/>
-      <%= f.text_field :title %>
-    </div>
-    <div class="field">
-      <%= f.label :version %>
-      <br/>
-      <%= f.text_field :version %>
-    </div>
+    <fieldset>
 
-    <div class="field">
-      <%= f.label :pub_date %>
-      <br/>
-      <%= f.datetime_select :pub_date %>
-    </div>
-
-    <div class="field">
-      <%= f.label :enclosure %>
-      <br/>
-      <%= f.file_field :enclosure %>
-    </div>
-
-    <div class="field">
-      <%= f.label :enclosure_mac %>
-      <br/>
-      <%= f.file_field :enclosure_mac %>
-    </div>
-
-    <div class="field">
-      <div id="wysihtml5-toolbar" style="display: none;">
-        <a data-wysihtml5-command="bold">bold</a>
-        <a data-wysihtml5-command="italic">italic</a>
-
-        <!-- Some wysihtml5 commands require extra parameters -->
-        <a data-wysihtml5-command="foreColor" data-wysihtml5-command-value="red">red</a>
-        <a data-wysihtml5-command="foreColor" data-wysihtml5-command-value="green">green</a>
-        <a data-wysihtml5-command="foreColor" data-wysihtml5-command-value="blue">blue</a>
-
-        <!-- Some wysihtml5 commands like 'createLink' require extra paramaters specified by the user (eg. href) -->
-        <a data-wysihtml5-command="createLink">insert link</a>
-
-        <div data-wysihtml5-dialog="createLink" style="display: none;">
-          <label>
-            Link:
-            <input data-wysihtml5-dialog-field="href" value="http://" class="text">
-          </label>
-          <a data-wysihtml5-dialog-action="save">OK</a> <a data-wysihtml5-dialog-action="cancel">Cancel</a>
-        </div>
+      <div class="control-group">
+        <%= f.label :title, :class => 'control-label' %>
+        <%= f.text_field :title, :class => 'controls' %>
+      </div>
+      <div class="control-group">
+        <%= f.label :version, :class => 'control-label' %>
+        <%= f.text_field :version, :class => 'controls'  %>
       </div>
 
-      <%= f.text_area :relnotes, :id => 'wysihtml5-textarea' %>
-    </div>
+      <div class="control-group">
+        <%= f.label :pub_date, :class => 'control-label' %>
+        <script type="text/javascript">
+            $(function() {
+                $('.datepicker').datepicker({ dateFormat: "yy-mm-dd 00:00:00.000000" });
+            });
+        </script>
+        <%= f.text_field :pub_date, :class => 'controls datepicker'  %>
+
+      </div>
+
+      <div class="control-group">
+        <%= f.label :enclosure, :class => 'control-label' %>
+        <%= f.file_field :enclosure, :class => 'controls'  %>
+      </div>
+
+      <div class="control-group">
+        <%= f.label :enclosure_mac, :class => 'control-label' %>
+        <%= f.file_field :enclosure_mac, :class => 'controls'  %>
+      </div>
+
+      <div class="control-group relnotes">
+        <%= f.label :relnotes , :class => 'control-label' %>
+        <%= f.text_area :relnotes, :rows => 20, :cols => 120, :class => 'controls tinymce'  %>
+        <%= tinymce %>
+      </div>
 
 
-    <div class="actions">
-      <%= f.submit %>
-    </div>
+      <div>
+        <%= f.submit :class => 'btn btn-primary'  %>
+      </div>
+
+    </fieldset>
 <% end %>

@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <b>Title:</b>
   <%= @product.title %>
@@ -17,8 +15,8 @@
 
 
 <p>Items</p>
-<table>
-  <tr><th align="left">Title</th> <th align="left">Version</th> <th align="left">Date</th> <th align="left">Windows</th><th align="left">Mac</th></tr>
+<table class="table table-striped">
+  <tr><th>Title</th> <th>Version</th> <th>Date</th> <th>Windows</th><th>Mac</th></tr>
 <%= render @product.items %>
 </table>
 <%= link_to 'Add item', new_product_item_path(@product) %>

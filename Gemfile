@@ -13,16 +13,17 @@ gem 'devise'
 gem 'therubyracer'
 gem 'less-rails' #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem 'twitter-bootstrap-rails'
+gem 'bootstrap-datepicker-rails'
 gem 'activeadmin' # http://0.0.0.0:3000/admin
 gem 'meta_search', '>= 1.1.0.pre'
 gem 'friendly_id'
 gem 'paperclip'
-gem 'wysihtml5-rails'
+gem 'tinymce-rails'
 
 group :development do
   gem 'awesome_print'
-  gem "better_errors"  # http://0.0.0.0:3000/__better_errors
-  gem "binding_of_caller"
+  gem 'better_errors'  # http://0.0.0.0:3000/__better_errors
+  gem 'binding_of_caller'
   gem 'meta_request', '0.2.1' # http://0.0.0.0:3000/rails/routes
   gem 'sextant'
   gem 'quiet_assets'
@@ -43,6 +44,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

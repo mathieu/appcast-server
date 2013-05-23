@@ -1,7 +1,7 @@
 class Product < ActiveRecord::Base
   extend FriendlyId
 
-  attr_accessible :description, :name, :title
+  attr_accessible :description, :name, :title, :user_id, :slug
 
   belongs_to :user
 

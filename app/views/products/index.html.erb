@@ -1,23 +1,19 @@
 <h5>Listing products</h5>
 
-<table>
+<table class="table table-striped">
   <tr>
-    <th>Title</th>
     <th>Name</th>
+    <th>Title</th>
     <th>Description</th>
-    <th></th>
-    <th></th>
     <th></th>
   </tr>
 
 <% @products.each do |product| %>
   <tr>
+    <td><%= link_to product.name,product.name %></td>
     <td><%= product.title %></td>
-    <td><%= product.name %></td>
     <td><%= product.description %></td>
-    <td><%= link_to 'Show', product %></td>
-    <td><%= link_to 'Edit', edit_product_path(product) %></td>
-    <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Edit', edit_product_path(product) %> | <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
