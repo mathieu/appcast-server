@@ -17,9 +17,11 @@
 
 
 <p>Items</p>
+<table>
+  <tr><th align="left">Title</th> <th align="left">Version</th> <th align="left">Date</th> </tr>
 <%= render @product.items %>
-
-<%= link_to 'Add tem', new_product_item_path(@product) %>
+</table>
+<%= link_to 'Add item', new_product_item_path(@product) %>
 
 <br/>
 

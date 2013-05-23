@@ -1,36 +1,36 @@
-<%= form_for [@product, @item], :html => { :multipart => true } do |f| %>
-  <% if @item.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+<%= form_for [@product, @item], :html => {:multipart => true} do |f| %>
+    <% if @item.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
 
-      <ul>
-      <% @item.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :version %><br />
-    <%= f.text_field :version %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
+          <ul>
+            <% @item.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
 
     <div class="field">
-      <%= f.label :pub_date %><br />
+      <%= f.label :title %>
+      <br/>
+      <%= f.text_field :title %>
+    </div>
+    <div class="field">
+      <%= f.label :version %>
+      <br/>
+      <%= f.text_field :version %>
+    </div>
+
+    <div class="field">
+      <%= f.label :pub_date %>
+      <br/>
       <%= f.datetime_select :pub_date %>
     </div>
 
     <div class="field">
-      <%= f.label :enclosure %><br />
+      <%= f.label :enclosure %>
+      <br/>
       <%= f.file_field :enclosure %>
     </div>
 
@@ -46,6 +46,7 @@
 
         <!-- Some wysihtml5 commands like 'createLink' require extra paramaters specified by the user (eg. href) -->
         <a data-wysihtml5-command="createLink">insert link</a>
+
         <div data-wysihtml5-dialog="createLink" style="display: none;">
           <label>
             Link:
@@ -55,11 +56,11 @@
         </div>
       </div>
 
-    <%= f.text_area :relnotes, :id => 'wysihtml5-textarea' %>
-  </div>
+      <%= f.text_area :relnotes, :id => 'wysihtml5-textarea' %>
+    </div>
 
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
 <% end %>

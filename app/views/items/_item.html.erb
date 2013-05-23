@@ -1,9 +1,1 @@
-<p>
-  <b>Title:</b>
-  <%= item.title %>
-</p>
-
-<p>
-  <b>Date:</b>
-  <%= item.pub_date %>
-</p>
+<tr> <td> <%= link_to  item.title , product_item_path(@product, item) %> </td> <td> <%= item.version %> </td><td>  <%= item.pub_date %>   </td>  </tr>

@@ -4,7 +4,6 @@
   <tr>
     <th>Title</th>
     <th>Version</th>
-    <th>Description</th>
     <th>Relnotes</th>
     <th>Pub date</th>
     <th>Enclosure name</th>
@@ -19,8 +18,7 @@
   <tr>
     <td><%= item.title %></td>
     <td><%= item.version %></td>
-    <td><%= item.description %></td>
-    <td><%= item.relnotes %></td>
+    <td><%= raw(item.relnotes) %></td>
     <td><%= item.pub_date %></td>
     <td><%= item.enclosure_file_name %></td>
     <td><%= item.enclosure_content_type %></td>

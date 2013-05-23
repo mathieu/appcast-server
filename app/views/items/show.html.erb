@@ -12,13 +12,8 @@
 </p>
 
 <p>
-  <b>Description:</b>
-  <%= @item.description %>
-</p>
-
-<p>
   <b>Relnotes:</b>
-  <%= @item.relnotes %>
+  <%= raw(@item.relnotes) %>
 </p>
 
 <p>
