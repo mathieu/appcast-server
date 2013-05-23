@@ -37,6 +37,22 @@
 </p>
 
 
+<p>
+  <b>Enclosure Mac file name:</b>
+  <%= @item.enclosure_mac_file_name %>
+</p>
+
+<p>
+  <b>Enclosure Mac content type:</b>
+  <%= @item.enclosure_mac_content_type %>
+</p>
+
+<p>
+  <b>Enclosure Mac file size:</b>
+  <%= @item.enclosure_mac_file_size %>
+</p>
+
+
 <%= link_to 'Edit', edit_product_item_path(@product, @item) %> |
 <%= link_to 'Back', product_items_path(@product) %>
 

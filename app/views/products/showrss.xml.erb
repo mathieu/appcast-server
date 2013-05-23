@@ -20,14 +20,25 @@
 		    <sparkle:releaseNotesLink><%= product_item_url(@product, item) %>/relnotes</sparkle:releaseNotesLink>
 
             <pubDate><%= item.pub_date %></pubDate>
+            <% if item.enclosure? %>
             <enclosure url="<%= root_url + item.enclosure.url %>"
                        sparkle:version="<%= item.version %>"
                        fervor:version="<%= item.version %>"
                        length="<%= item.enclosure_file_size %>"
                        type="<%= item.enclosure_content_type %>"
                        sparkle:md5="<%= item.enclosure_fingerprint %>"
+                       fervor:platform="Q_OS_WIN32"
+                       />
+            <% end %>
+            <% if item.enclosure_mac? %>
+            <enclosure url="<%= root_url + item.enclosure_mac.url %>"
+                       sparkle:version="<%= item.version %>"
+                       fervor:version="<%= item.version %>"
+                       length="<%= item.enclosure_mac_file_size %>"
+                       type="<%= item.enclosure_mac_content_type %>"
                        fervor:platform="Q_OS_MAC"
                        />
+            <% end %>
         </item>
     <% end %>
    </channel>

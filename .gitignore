@@ -19,4 +19,4 @@ doc/
 db/development.sqlite3
 log/*.log
 .idea
-public/system/items/enclosures/*
+public/system/items/*

@@ -7,8 +7,7 @@
     <th>Relnotes</th>
     <th>Pub date</th>
     <th>Enclosure name</th>
-    <th>Enclosure type</th>
-    <th>Enclosure length</th>
+    <th>Enclosure Mac name</th>
     <th></th>
     <th></th>
     <th></th>
@@ -21,9 +20,7 @@
     <td><%= raw(item.relnotes) %></td>
     <td><%= item.pub_date %></td>
     <td><%= item.enclosure_file_name %></td>
-    <td><%= item.enclosure_content_type %></td>
-    <td><%= item.enclosure_file_size %></td>
-    <td><%= item.enclosure_fingerprint %></td>
+    <td><%= item.enclosure_mac_file_name %></td>
     <td><%= link_to 'Show', product_item_path(@product,item) %></td>
     <td><%= link_to 'Edit', edit_product_item_path(@product,item) %></td>
     <td><%= link_to 'Destroy', product_item_path(@product,item), method: :delete, data: { confirm: 'Are you sure?' } %></td>

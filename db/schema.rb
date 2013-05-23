@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130523074457) do
+ActiveRecord::Schema.define(:version => 20130523081629) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -63,16 +63,22 @@ ActiveRecord::Schema.define(:version => 20130523074457) do
     t.text     "relnotes"
     t.datetime "pub_date"
     t.integer  "product_id"
-    t.datetime "created_at",             :null => false
-    t.datetime "updated_at",             :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
     t.string   "enclosure_file_name"
     t.string   "enclosure_content_type"
     t.integer  "enclosure_file_size"
     t.datetime "enclosure_updated_at"
     t.string   "enclosure_fingerprint"
+    t.string   "slug"
+    t.string   "enclosure_mac_file_name"
+    t.string   "enclosure_mac_content_type"
+    t.integer  "enclosure_mac_file_size"
+    t.datetime "enclosure_mac_updated_at"
   end
 
   add_index "items", ["product_id"], :name => "index_items_on_product_id"
+  add_index "items", ["slug"], :name => "index_items_on_slug"
 
   create_table "products", :force => true do |t|
     t.string   "title"
