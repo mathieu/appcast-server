@@ -27,7 +27,6 @@ group :development do
   gem 'meta_request', '0.2.1' # http://0.0.0.0:3000/rails/routes
   gem 'sextant'
   gem 'quiet_assets'
-  gem 'capistrano'
 end
 
 
@@ -43,6 +42,10 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :production do
+  gem 'mysql2'
+end
+
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
@@ -56,7 +59,7 @@ gem 'jquery-ui-rails'
 # gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+gem 'capistrano'
 
 # To use debugger
 # gem 'debugger'
