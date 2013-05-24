@@ -1,5 +1,5 @@
 class RemoveDescriptionFromItems < ActiveRecord::Migration
   def change
-    remove_column :items, :description, :text
+    remove_column :items, :description
   end
 end
