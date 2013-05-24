@@ -1,9 +1,13 @@
 # config/deploy.rb
+require 'rvm/capistrano'  # Add Bundler integration
 require 'bundler/capistrano'  # Add Bundler integration
 
 
+set :rvm_type, :system
+set :rvm_bin_path, "/usr/local/rvm/bin"
+set :rvm_path, "/usr/local/rvm/"
 
-set :application, "Appcast"
+set :application, "appcast"
 
 # set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
@@ -35,5 +39,3 @@ set :user, "deploy"
 set :deploy_to, "/var/www/#{application}"
 set :deploy_via, :remote_cache
 set :use_sudo, false
-set :rvm_type, :system
-set :rvm_bin_path, "/usr/local/rvm/rubies/ruby-1.9.3-p429/bin"
