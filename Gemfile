@@ -27,7 +27,7 @@ group :development do
   gem 'meta_request', '0.2.1' # http://0.0.0.0:3000/rails/routes
   gem 'sextant'
   gem 'quiet_assets'
-
+  gem 'capistrano'
 end
 
 
