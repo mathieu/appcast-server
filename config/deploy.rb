@@ -2,6 +2,7 @@
 require 'rvm/capistrano'  # Add Bundler integration
 require 'bundler/capistrano'  # Add Bundler integration
 
+load File.expand_path('../recipes/assets.rb', __FILE__)
 
 set :rvm_type, :system
 set :rvm_bin_path, "/usr/local/rvm/bin"
