@@ -1,6 +1,7 @@
 <tr>
   <td> <%= link_to  item.title , product_item_path(@product, item) %> </td>
   <td> <%= item.version %> </td><td>  <%= item.pub_date %>   </td>
+  <td><%= link_to product_item_url(@product, item)+ '/relnotes', product_item_url(@product, item)+ '/relnotes' %></td>
   <td> <% if item.enclosure? %>Yes<% end %> </td>
   <td> <% if item.enclosure_mac? %>Yes<% end %> </td>
 </tr>
