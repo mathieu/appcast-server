@@ -1,21 +1,12 @@
-<p>
-  <b>Title:</b>
-  <%= @product.title %>
-</p>
-
-<p>
-  <b>Name:</b>
-  <%= @product.name %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @product.description %>
-</p>
-
+<table class="table table-striped table-condensed">
+  <tr><td>Title:</td><td><%= @product.title %></td>
+  <tr><td>Name:</td><td><%= @product.name %></td>
+  <tr><td>Description:</td><td><%= @product.description %></td>
+  <tr><td>appcast:</td><td><%= link_to product_url(@product)+ '.xml', product_url(@product) + '.xml' %></td>
+</table>
 
 <p>Items</p>
-<table class="table table-striped">
+<table class="table table-striped table-condensed">
   <tr><th>Title</th> <th>Version</th> <th>Date</th> <th>Windows</th><th>Mac</th></tr>
 <%= render @product.items %>
 </table>
@@ -23,5 +14,5 @@
 
 <br/>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<button class='btn btn-primary'><%= link_to 'Edit', edit_product_path(@product)%> </button> |
+<%= button_to 'Back', products_path, :class => 'btn', :method => :get %>
