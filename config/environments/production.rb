@@ -67,6 +67,8 @@ AppcastServer::Application.configure do
 
   config.relative_url_root = '/appcast'
   #config.assets.prefix = '/appcast/assets'
+
+  config.assets.precompile += ['relnotes.css']
 end
 
 ActiveAdmin.setup do |config|

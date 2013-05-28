@@ -10,9 +10,19 @@
   <tr><th>Title</th> <th>Version</th> <th>Date</th> <th>Windows</th><th>Mac</th></tr>
 <%= render @product.items %>
 </table>
-<%= link_to 'Add item', new_product_item_path(@product) %>
 
 <br/>
 
-<button class='btn btn-primary'><%= link_to 'Edit', edit_product_path(@product)%> </button> |
-<%= button_to 'Back', products_path, :class => 'btn', :method => :get %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              products_path, :class => 'btn'  %>
+  <%= link_to 'Add item', new_product_item_path(@product), :class => 'btn btn-success' %>
+
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_product_path(@product), :class => 'btn btn-success' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              product_path(@product),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

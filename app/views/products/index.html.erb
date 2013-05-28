@@ -13,11 +13,19 @@
     <td><%= link_to product.name, product_path(product) %></td>
     <td><%= product.title %></td>
     <td><%= link_to product_url(product)+ '.xml', product_url(product) + '.xml' %></td>
-    <td><%= link_to 'Edit', edit_product_path(product) %> | <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td>
+      <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                  edit_product_path(product), :class => 'btn btn-success btn-mini' %>
+      <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                  product_path(product),
+                  :method => 'delete',
+                  :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                  :class => 'btn btn-danger btn-mini' %>
+    </td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Product', new_product_path %>
+<%= link_to 'New Product', new_product_path, :class => 'btn btn-success'  %>

@@ -17,7 +17,7 @@
   <tr>
     <td><%= item.title %></td>
     <td><%= item.version %></td>
-    <td><%= raw(item.relnotes) %></td>
+    <td><%= link_to product_item_url(@product,item) + '/relnotes', product_item_url(@product,item) + '/relnotes'  %></td>
     <td><%= item.pub_date %></td>
     <td><%= item.enclosure_file_name %></td>
     <td><%= item.enclosure_mac_file_name %></td>
