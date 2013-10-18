@@ -5,7 +5,7 @@ class Product < ActiveRecord::Base
 
   belongs_to :user
 
-  has_many :items
+  has_many :items , order: 'pub_date desc'
 
   friendly_id :name, use: [:slugged, :history]
 
