@@ -1,6 +1,8 @@
 class Product < ActiveRecord::Base
   extend FriendlyId
 
+  is_impressionable
+
   attr_accessible :description, :name, :title, :user_id, :slug
 
   has_and_belongs_to_many :users

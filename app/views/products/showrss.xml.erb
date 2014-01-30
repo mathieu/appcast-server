@@ -21,7 +21,7 @@
 
             <pubDate><%= item.pub_date %></pubDate>
             <% if item.enclosure? %>
-            <enclosure url="<%= root_url + item.enclosure.url %>"
+            <enclosure url="<%= product_item_url(@product, item) + '/windows' %>"
                        sparkle:version="<%= item.version %>"
                        fervor:version="<%= item.version %>"
                        length="<%= item.enclosure_file_size %>"
@@ -31,7 +31,7 @@
                        />
             <% end %>
             <% if item.enclosure_mac? %>
-            <enclosure url="<%= root_url + item.enclosure_mac.url %>"
+            <enclosure url="<%= product_item_url(@product, item) + '/mac' %>"
                        sparkle:version="<%= item.version %>"
                        fervor:version="<%= item.version %>"
                        length="<%= item.enclosure_mac_file_size %>"

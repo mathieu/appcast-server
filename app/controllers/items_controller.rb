@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
 
-  before_filter :authenticate_user!, :except => [:show_relnotes]
+  before_filter :authenticate_user!, :except => [:show_relnotes, :get_mac, :get_windows]
 
   # GET /products/:product_id/items
   def index
@@ -27,8 +27,30 @@ class ItemsController < ApplicationController
     @product = Product.find(params[:product_id])
     @item = @product.items.find(params[:id])
 
+    impressionist(@item,message="relnotes")
+
     render :layout => "relnotes"
 
+  end
+
+  # GET /products/:product_id/items/1/windows
+  def get_windows
+    product = Product.find(params[:product_id])
+    item = product.items.find(params[:id])
+
+    impressionist(item,message="windows")
+
+    redirect_to item.enclosure.url
+  end
+
+  # GET /products/:product_id/items/1/mac
+  def get_mac
+    product = Product.find(params[:product_id])
+    item = product.items.find(params[:id])
+
+    impressionist(item,message="mac")
+
+    redirect_to item.enclosure_mac.url
   end
 
   # GET /products/:product_id/items/new

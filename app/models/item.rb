@@ -1,6 +1,8 @@
 class Item < ActiveRecord::Base
   extend FriendlyId
 
+  is_impressionable
+
   attr_accessible  :enclosure, :enclosure_fingerprint, :enclosure_mac, :pub_date, :relnotes, :title, :version
 
 
