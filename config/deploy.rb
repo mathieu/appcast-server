@@ -1,6 +1,6 @@
 # config/deploy.rb
-require 'rvm/capistrano'  # Add Bundler integration
-require 'bundler/capistrano'  # Add Bundler integration
+require 'capistrano'  # Add Bundler integration
+#require 'bundler/capistrano'  # Add Bundler integration
 
 load File.expand_path('../recipes/assets.rb', __FILE__)
 
