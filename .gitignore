@@ -6,7 +6,7 @@ coverage
 InstalledFiles
 lib/bundler/man
 pkg
-rdoc
+bin/*
 spec/reports
 test/tmp
 test/version_tmp
