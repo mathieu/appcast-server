@@ -1,0 +1,33 @@
+
+<table class="table table-striped table-condensed">
+  <tr>
+    <td>Windows :</td>
+    <td><%= link_to @item.enclosure_file_name, product_item_url(@product, @item) + '/windows' %></td>
+    <td><%= @item.enclosure_content_type %></td>
+    <td><%= @item.enclosure_file_size %></td>
+    <td><%= @item.impressionist_count(:message=>"windows", :filter=>:all) %> download(s)</td>
+  </tr>
+
+  <%= render partial: "downloads", locals: { impressions: @windows_impressions } %>
+
+</table>
+
+<table class="table table-striped table-condensed">
+  <tr>
+    <td>Mac :</td>
+    <td><%= link_to @item.enclosure_mac_file_name, product_item_url(@product, @item) + '/mac' %></td>
+    <td><%= @item.enclosure_mac_content_type %></td>
+    <td><%= @item.enclosure_mac_file_size %></td>
+    <td><%= @item.impressionist_count(:message=>"mac", :filter=>:all) %> download(s)</td>
+  </tr>
+
+  <%= render partial: "downloads", locals: { impressions: @mac_impressions } %>
+
+
+</table>
+
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              product_items_path(@product, @item), :class => 'btn'  %>
+</div>

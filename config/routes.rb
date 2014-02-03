@@ -18,6 +18,8 @@ AppcastServer::Application.routes.draw do
   match '/products/:product_id/items/:id/windows'=>'items#get_windows', :format=>false, :defaults=>{:format=>'html'}
   match '/products/:product_id/items/:id/mac'=>'items#get_mac', :format=>false, :defaults=>{:format=>'html'}
 
+  match '/products/:product_id/items/:id/downloads'=>'items#downloads', :format=>false, :defaults=>{:format=>'html'}
+
   resources :products do
     resources :items
   end

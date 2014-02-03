@@ -53,6 +53,20 @@ class ItemsController < ApplicationController
     redirect_to item.enclosure_mac.url
   end
 
+  # GET /products/:product_id/items/1/downloads
+  def downloads
+    @product = Product.find(params[:product_id])
+    @item = @product.items.find(params[:id])
+
+    @mac_impressions = @item.impressions.where(:message => 'mac')
+    @windows_impressions = @item.impressions.where(:message => 'windows')
+
+    respond_to do |format|
+      format.html # downloads.html.erb
+    end
+  end
+
+
   # GET /products/:product_id/items/new
   def new
     @product = Product.find(params[:product_id])
