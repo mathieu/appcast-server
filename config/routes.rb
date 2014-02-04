@@ -15,6 +15,10 @@ AppcastServer::Application.routes.draw do
 
   match '/products/:id.xml'=>'products#showrss', :format=>false, :defaults=>{:format=>'xml'}
   match '/products/:product_id/items/:id/relnotes'=>'items#show_relnotes', :format=>false, :defaults=>{:format=>'html'}
+  match '/products/:product_id/items/:id/windows'=>'items#get_windows', :format=>false, :defaults=>{:format=>'html'}
+  match '/products/:product_id/items/:id/mac'=>'items#get_mac', :format=>false, :defaults=>{:format=>'html'}
+
+  match '/products/:product_id/items/:id/downloads'=>'items#downloads', :format=>false, :defaults=>{:format=>'html'}
 
   resources :products do
     resources :items

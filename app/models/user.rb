@@ -17,5 +17,5 @@ class User < ActiveRecord::Base
         value && value == "12345"
   end
 
-  has_many :products
+  has_and_belongs_to_many :products
 end

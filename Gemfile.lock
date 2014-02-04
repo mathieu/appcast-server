@@ -75,6 +75,7 @@ GEM
       execjs
     coffee-script-source (1.6.2)
     commonjs (0.2.6)
+    daemons (1.1.9)
     debug_inspector (0.0.2)
     devise (2.2.4)
       bcrypt-ruby (~> 3.0)
@@ -82,6 +83,7 @@ GEM
       railties (~> 3.1)
       warden (~> 1.2.1)
     erubis (2.7.0)
+    eventmachine (1.0.3)
     execjs (1.4.0)
       multi_json (~> 1.0)
     fastercsv (1.5.5)
@@ -91,7 +93,11 @@ GEM
     has_scope (0.5.1)
     highline (1.6.19)
     hike (1.2.2)
+    httpclient (2.3.4.1)
     i18n (0.6.1)
+    impressionist (1.5.1)
+      httpclient (~> 2.2)
+      nokogiri (~> 1.5)
     inherited_resources (1.4.0)
       has_scope (~> 0.5.0)
       responders (~> 0.9)
@@ -124,6 +130,7 @@ GEM
       activesupport (~> 3.1)
       polyamorous (~> 0.5.0)
     mime-types (1.23)
+    mini_portile (0.5.2)
     multi_json (1.7.3)
     mysql2 (0.3.11)
     net-scp (1.1.1)
@@ -133,6 +140,8 @@ GEM
     net-ssh (2.6.7)
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
+    nokogiri (1.6.1)
+      mini_portile (~> 0.5.0)
     orm_adapter (0.4.0)
     paperclip (3.4.2)
       activemodel (>= 3.0.0)
@@ -192,6 +201,10 @@ GEM
     therubyracer (0.11.4)
       libv8 (~> 3.11.8.12)
       ref
+    thin (1.6.1)
+      daemons (>= 1.0.9)
+      eventmachine (>= 1.0.0)
+      rack (>= 1.0.0)
     thor (0.18.1)
     tilt (1.4.1)
     tinymce-rails (3.5.8.2)
@@ -223,6 +236,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   devise
   friendly_id
+  impressionist
   jquery-rails
   jquery-ui-rails
   less-rails
@@ -236,6 +250,7 @@ DEPENDENCIES
   sextant
   sqlite3
   therubyracer
+  thin
   tinymce-rails
   twitter-bootstrap-rails
   uglifier (>= 1.0.3)

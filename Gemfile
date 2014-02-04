@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '1.9.3'
+
 gem 'rails', '3.2.13'
 
 # Bundle edge Rails instead:
@@ -27,6 +29,7 @@ group :development do
   gem 'meta_request', '0.2.1' # http://0.0.0.0:3000/rails/routes
   gem 'sextant'
   gem 'quiet_assets'
+  gem 'thin'
 end
 
 
@@ -63,3 +66,5 @@ gem 'capistrano'
 
 # To use debugger
 # gem 'debugger'
+
+gem 'impressionist'

@@ -25,6 +25,8 @@ class ProductsController < ApplicationController
   def showrss
     @product = Product.find(params[:id])
 
+    impressionist(@product,message='showrss')
+
     respond_to do |format|
       format.xml # showrss.xml.erb
     end
