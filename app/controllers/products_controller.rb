@@ -50,7 +50,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(params[:product])
 
-    @product.user = current_user
+    @product.users << current_user
 
     respond_to do |format|
       if @product.save
