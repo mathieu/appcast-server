@@ -20,3 +20,5 @@ db/development.sqlite3
 log/*.log
 .idea
 public/system/items/*
+.cap_tasks~
+

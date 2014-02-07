@@ -3,7 +3,7 @@ class Product < ActiveRecord::Base
 
   is_impressionable
 
-  attr_accessible :description, :name, :title, :user_id, :slug
+  attr_accessible :description, :name, :title, :item_ids, :user_ids, :slug
 
   has_and_belongs_to_many :users
 
