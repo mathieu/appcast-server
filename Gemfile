@@ -16,7 +16,7 @@ gem 'therubyracer'
 gem 'less-rails' #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem 'twitter-bootstrap-rails'
 gem 'bootstrap-datepicker-rails'
-gem 'activeadmin' # http://0.0.0.0:3000/admin
+gem 'activeadmin', '= 0.6.3' # http://0.0.0.0:3000/admin
 gem 'meta_search', '>= 1.1.0.pre'
 gem 'friendly_id'
 gem 'paperclip'
