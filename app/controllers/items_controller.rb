@@ -40,7 +40,7 @@ class ItemsController < ApplicationController
 
     impressionist(item,message="windows")
 
-    redirect_to item.enclosure.url
+    redirect_to @_env['SCRIPT_NAME'] + item.enclosure.url
   end
 
   # GET /products/:product_id/items/1/mac
@@ -50,7 +50,7 @@ class ItemsController < ApplicationController
 
     impressionist(item,message="mac")
 
-    redirect_to item.enclosure_mac.url
+    redirect_to @_env['SCRIPT_NAME'] + item.enclosure_mac.url
   end
 
   # GET /products/:product_id/items/1/downloads
