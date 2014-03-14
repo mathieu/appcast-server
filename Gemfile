@@ -19,7 +19,7 @@ gem 'bootstrap-datepicker-rails'
 gem 'activeadmin', '= 0.6.3' # http://0.0.0.0:3000/admin
 gem 'meta_search', '>= 1.1.0.pre'
 gem 'friendly_id'
-gem 'paperclip'
+gem 'paperclip', '~> 3.5.4'
 gem 'tinymce-rails'
 
 group :development do
