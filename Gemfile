@@ -14,7 +14,7 @@ gem 'devise'
 # https://github.com/seyhunak/twitter-bootstrap-rails
 gem 'therubyracer'
 gem 'less-rails', '~> 2.5.0' #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
-gem 'twitter-bootstrap-rails'
+gem 'twitter-bootstrap-rails', '~> 2.2.7'
 gem 'bootstrap-datepicker-rails'
 gem 'activeadmin', '= 0.6.3' # http://0.0.0.0:3000/admin
 gem 'meta_search', '>= 1.1.0.pre'
@@ -30,6 +30,10 @@ group :development do
   gem 'sextant'
   gem 'quiet_assets'
   gem 'thin'
+  # deploy using capistrano
+  gem 'capistrano', '~> 3.0', require: false
+  gem 'capistrano-rails',   '~> 1.1', require: false
+  gem 'capistrano-bundler', '~> 1.1', require: false
 end
 
 
@@ -51,20 +55,5 @@ end
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
 
 gem 'impressionist'
