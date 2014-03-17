@@ -40,7 +40,7 @@ namespace :deploy do
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
       # Your restart mechanism here, for example:
-      #execute :touch, release_path.join('tmp/restart.txt')
+      execute :touch, release_path.join('tmp/restart.txt')
     end
   end
 
@@ -54,5 +54,11 @@ namespace :deploy do
       # end
     end
   end
+
+  task :create_symlinks, :role => :app do
+    run "ln -nfs #{shared_path}/system #{release_path}/system" #Create symlink for private files
+  end
+  
+  before "deploy:finalize_update", "deploy:create_symlinks"
 
 end

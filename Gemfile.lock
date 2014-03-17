@@ -264,5 +264,5 @@ DEPENDENCIES
   therubyracer
   thin
   tinymce-rails (~> 4.0.19)
-  twitter-bootstrap-rails
+  twitter-bootstrap-rails (~> 2.2.7)
   uglifier (>= 1.0.3)
