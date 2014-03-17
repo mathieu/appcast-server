@@ -26,7 +26,7 @@ set :deploy_to, '/var/www/appcast'
 # set :linked_files, %w{config/database.yml}
 
 # Default value for linked_dirs is []
-# set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 # Default value for default_env is {}
 set :default_env, { path: "/usr/local/rvm/bin:$PATH" , TERM: 'xterm'}
@@ -54,13 +54,5 @@ namespace :deploy do
       # end
     end
   end
-
-  task :create_symlinks do
-    on roles(:app) do
-      run "ln -nfs #{shared_path}/system #{release_path}/system" #Create symlink for private files
-    end
-  end
-
-  before :finishing, :create_symlinks
 
 end
