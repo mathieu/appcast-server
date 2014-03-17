@@ -55,10 +55,12 @@ namespace :deploy do
     end
   end
 
-  task :create_symlinks, :role => :app do
-    run "ln -nfs #{shared_path}/system #{release_path}/system" #Create symlink for private files
+  task :create_symlinks do
+    on roles(:app) do
+      run "ln -nfs #{shared_path}/system #{release_path}/system" #Create symlink for private files
+    end
   end
-  
-  before "deploy:finalize_update", "deploy:create_symlinks"
+
+  before :finishing, :create_symlinks
 
 end
