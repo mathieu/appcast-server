@@ -22,3 +22,6 @@ log/*.log
 public/system/items/*
 .cap_tasks~
 old_cap
+
+# Ignore application configuration
+/config/application.yml
