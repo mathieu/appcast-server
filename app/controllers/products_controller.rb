@@ -21,6 +21,22 @@ class ProductsController < ApplicationController
     end
   end
 
+  # GET /products/:id/windows
+  def get_windows
+    product = Product.find(params[:id])
+    item = product.items.first # order: 'pub_date desc'
+
+    redirect_to product_item_url(product, item) + '/windows'
+  end
+
+  # GET /products/:id/mac
+  def get_mac
+    product = Product.find(params[:id])
+    item = product.items.first # order: 'pub_date desc'
+
+    redirect_to product_item_url(product, item) + '/mac'
+  end
+
   # GET /products/1.xml
   def showrss
     @product = Product.find(params[:id])
