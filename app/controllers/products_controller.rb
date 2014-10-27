@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 
-  before_filter :authenticate_user! , :except => [:showrss]
+  before_filter :authenticate_user! , :except => [:showrss, :get_mac, :get_windows]
   respond_to :xml
 
   # GET /products
