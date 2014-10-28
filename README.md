@@ -1,5 +1,7 @@
 # appcast-server
 
+[ ![Codeship Status for mathieu/appcast-server](https://www.codeship.io/projects/f2cc7580-40a2-0132-6d1b-262ceda1d180/status)](https://www.codeship.io/projects/43916)
+
 _Appcasting made easy_
 
 ## Design ideas
