@@ -25,3 +25,4 @@ old_cap
 
 # Ignore application configuration
 /config/application.yml
+db/test.sqlite3

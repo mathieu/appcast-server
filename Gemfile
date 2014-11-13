@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-# ruby '1.9.3'
+ruby '1.9.3'
 
-gem 'rails', '3.2.17'
+gem 'rails', '3.2.20'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -35,6 +35,8 @@ group :development do
   gem 'capistrano', '~> 3.0', require: false
   gem 'capistrano-rails',   '~> 1.1', require: false
   gem 'capistrano-bundler', '~> 1.1', require: false
+  # gem security scanner
+  gem "brakeman", :require => false
 end
 
 
