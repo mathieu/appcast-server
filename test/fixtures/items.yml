@@ -3,15 +3,20 @@
 one:
   title: MyApp 1.0
   version: 1.0
+  product: :one
   relnotes: my relnotes
   pub_date: 2013-04-21 12:31:56
   enclosure_file_name: MyApp-1.0.zip
   enclosure_content_type: application/octet-stream
   enclosure_file_size: 160000
+  enclosure_mac_file_name: MyApp-1.0.dmg
+  enclosure_mac_content_type: application/octet-stream
+  enclosure_mac_file_size: 160000
 
 two:
   title: MyApp 2.0
   version: 2.0
+  product: :one
   relnotes: my relnotes
   pub_date: 2013-05-21 10:11:22
   enclosure_file_name: MyApp-2.0.zip
