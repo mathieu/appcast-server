@@ -13,14 +13,14 @@ AppcastServer::Application.routes.draw do
 
   devise_for :users
 
-  match '/products/:id.xml'=>'products#showrss', :format=>false, :defaults=>{:format=>'xml'}
-  match '/products/:id/windows'=>'products#get_windows', :format=>false, :defaults=>{:format=>'html'}
-  match '/products/:id/mac'=>'products#get_mac', :format=>false, :defaults=>{:format=>'html'}
-  match '/products/:product_id/items/:id/relnotes'=>'items#show_relnotes', :format=>false, :defaults=>{:format=>'html'}
-  match '/products/:product_id/items/:id/windows'=>'items#get_windows', :format=>false, :defaults=>{:format=>'html'}
-  match '/products/:product_id/items/:id/mac'=>'items#get_mac', :format=>false, :defaults=>{:format=>'html'}
+  match 'products/:id.xml'=>'products#showrss', :format=>false, :defaults=>{:format=>'xml'}, via: [:get]
+  match 'products/:id/windows'=>'products#get_windows', :format=>false, :defaults=>{:format=>'html'}, via: [:get]
+  match 'products/:id/mac'=>'products#get_mac', :format=>false, :defaults=>{:format=>'html'}, via: [:get]
+  match 'products/:product_id/items/:id/relnotes'=>'items#show_relnotes', :format=>false, :defaults=>{:format=>'html'}, via: [:get]
+  match 'products/:product_id/items/:id/windows'=>'items#get_windows', :format=>false, :defaults=>{:format=>'html'}, via: [:get]
+  match 'products/:product_id/items/:id/mac'=>'items#get_mac', :format=>false, :defaults=>{:format=>'html'}, via: [:get]
 
-  match '/products/:product_id/items/:id/downloads'=>'items#downloads', :format=>false, :defaults=>{:format=>'html'}
+  match 'products/:product_id/items/:id/downloads'=>'items#downloads', :format=>false, :defaults=>{:format=>'html'}, via: [:get]
 
   resources :products do
     resources :items

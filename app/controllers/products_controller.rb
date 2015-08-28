@@ -21,18 +21,20 @@ class ProductsController < ApplicationController
     end
   end
 
+  # get latest windows release
   # GET /products/:id/windows
   def get_windows
     product = Product.find(params[:id])
-    item = product.items.first # order: 'pub_date desc'
+    item = product.items.where('enclosure_file_name is not null').first # order: 'pub_date desc'
 
     redirect_to product_item_url(product, item) + '/windows'
   end
 
+  # get latest mac release
   # GET /products/:id/mac
   def get_mac
     product = Product.find(params[:id])
-    item = product.items.first # order: 'pub_date desc'
+    item = product.items.where('enclosure_mac_file_name is not null').first # order: 'pub_date desc'
 
     redirect_to product_item_url(product, item) + '/mac'
   end
