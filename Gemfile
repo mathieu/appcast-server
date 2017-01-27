@@ -26,7 +26,7 @@ gem 'net-ssh', '~> 2.8.0'
 
 group :development do
   gem 'awesome_print'
-  gem 'better_errors'  # http://0.0.0.0:3000/__better_errors
+  gem 'better_errors', '1.1.0'  # http://0.0.0.0:3000/__better_errors
   gem 'binding_of_caller'
   gem 'meta_request', '0.2.1' # http://0.0.0.0:3000/rails/routes
   gem 'sextant'
