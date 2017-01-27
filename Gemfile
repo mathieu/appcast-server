@@ -1,18 +1,17 @@
 source 'https://rubygems.org'
 
-ruby '1.9.3'
+#ruby '2.0.0'
 
 gem 'rails', '3.2.20'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
 
 gem 'devise'
 
 # https://github.com/seyhunak/twitter-bootstrap-rails
-gem 'therubyracer'
+gem 'therubyracer', '~> 0.12.3'
 gem 'less-rails', '~> 2.5.0' #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem 'twitter-bootstrap-rails', '~> 2.2.7'
 gem 'bootstrap-datepicker-rails'
@@ -22,6 +21,7 @@ gem 'friendly_id'
 gem 'paperclip', '~> 3.5.4'
 gem 'tinymce-rails', '~> 4.0.19'
 gem 'figaro'
+gem 'chartkick'
 
 group :development do
   gem 'awesome_print'
@@ -37,6 +37,9 @@ group :development do
   gem 'capistrano-bundler', '~> 1.1', require: false
   # gem security scanner
   gem "brakeman", :require => false
+  #gem 'groupdate', github: 'ankane/groupdate', branch: 'sqlite'
+  gem 'sqlite3'
+
 end
 
 
@@ -53,7 +56,8 @@ group :assets do
 end
 
 group :production do
-  gem 'mysql2'
+ gem 'groupdate'
+ gem 'mysql2'
 end
 
 gem 'jquery-rails'

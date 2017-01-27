@@ -7,7 +7,9 @@
     <td><%= @item.enclosure_file_size %></td>
     <td><%= @item.impressionist_count(:message=>"windows", :filter=>:all) %> download(s)</td>
   </tr>
-
+  <tr>
+    <td><%= line_chart @windows_impressions.group_by_day(:created_at).count %></td>
+  </tr>
   <%= render partial: "downloads", locals: { impressions: @windows_impressions } %>
 
 </table>
@@ -20,7 +22,9 @@
     <td><%= @item.enclosure_mac_file_size %></td>
     <td><%= @item.impressionist_count(:message=>"mac", :filter=>:all) %> download(s)</td>
   </tr>
-
+  <tr>
+    <td><%= line_chart @mac_impressions.group_by_day(:created_at).count %></td>
+  </tr>
   <%= render partial: "downloads", locals: { impressions: @mac_impressions } %>
 
 
