@@ -22,6 +22,7 @@ gem 'paperclip', '~> 3.5.4'
 gem 'tinymce-rails', '~> 4.0.19'
 gem 'figaro'
 gem 'chartkick'
+gem 'net-ssh', '~> 2.8.0'
 
 group :development do
   gem 'awesome_print'
