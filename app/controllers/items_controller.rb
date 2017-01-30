@@ -27,7 +27,7 @@ class ItemsController < ApplicationController
     @product = Product.find(params[:product_id])
     @item = @product.items.find(params[:id])
 
-    impressionist(@item,message="relnotes")
+    impressionist(@item,'relnotes')
 
     render :layout => "relnotes"
 
@@ -38,7 +38,7 @@ class ItemsController < ApplicationController
     product = Product.find(params[:product_id])
     item = product.items.find(params[:id])
 
-    impressionist(item,message="windows")
+    impressionist(item,'windows')
 
     redirect_to @_env['SCRIPT_NAME'] + item.enclosure.url
   end
@@ -48,7 +48,7 @@ class ItemsController < ApplicationController
     product = Product.find(params[:product_id])
     item = product.items.find(params[:id])
 
-    impressionist(item,message="mac")
+    impressionist(item,'mac')
 
     redirect_to @_env['SCRIPT_NAME'] + item.enclosure_mac.url
   end
