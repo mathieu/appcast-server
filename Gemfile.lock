@@ -144,7 +144,7 @@ GEM
     mime-types (1.25.1)
     mini_portile2 (2.1.0)
     multi_json (1.12.1)
-    mysql2 (0.4.5)
+    mysql2 (0.3.21)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.8.0)
@@ -259,7 +259,7 @@ DEPENDENCIES
   less-rails (~> 2.5.0)
   meta_request (= 0.2.1)
   meta_search (>= 1.1.0.pre)
-  mysql2
+  mysql2 (~> 0.3.11)
   net-ssh (~> 2.8.0)
   paperclip (~> 3.5.4)
   quiet_assets

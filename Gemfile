@@ -58,7 +58,7 @@ end
 
 group :production do
  gem 'groupdate'
- gem 'mysql2'
+ gem 'mysql2', "~> 0.3.11"
 end
 
 gem 'jquery-rails'
