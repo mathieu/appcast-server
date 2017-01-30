@@ -33,7 +33,7 @@ group :development do
   gem 'quiet_assets'
   gem 'thin'
   # deploy using capistrano
-  gem 'capistrano', '~> 3.1', require: false
+  gem 'capistrano', '~> 3.1.0', require: false
   gem 'capistrano-rails',   '~> 1.1', require: false
   gem 'capistrano-bundler', '~> 1.1', require: false
   # gem security scanner
