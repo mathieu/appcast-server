@@ -107,9 +107,11 @@ GEM
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
     hike (1.2.3)
+    httpclient (2.8.3)
     i18n (0.7.0)
-    impressionist (1.5.2)
-      nokogiri (~> 1.6)
+    impressionist (1.5.1)
+      httpclient (~> 2.2)
+      nokogiri (~> 1.5)
     inherited_resources (1.6.0)
       actionpack (>= 3.2, < 5)
       has_scope (~> 0.6.0.rc)
@@ -255,7 +257,7 @@ DEPENDENCIES
   figaro (= 0.7.0)
   friendly_id
   groupdate
-  impressionist
+  impressionist (= 1.5.1)
   jquery-rails (~> 2.3.0)
   jquery-ui-rails (~> 4.2.0)
   less-rails (~> 2.5.0)

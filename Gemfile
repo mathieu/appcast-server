@@ -65,4 +65,4 @@ end
 gem 'jquery-rails', '~> 2.3.0'
 gem 'jquery-ui-rails', '~> 4.2.0'
 
-gem 'impressionist'
+gem 'impressionist', '= 1.5.1'
