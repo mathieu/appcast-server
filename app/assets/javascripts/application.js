@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
+//= require jquery-ui/datepicker
 //= require twitter/bootstrap
 //= require Chart.bundle
 //= require chartkick
