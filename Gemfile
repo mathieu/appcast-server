@@ -61,7 +61,7 @@ group :production do
  gem 'mysql2', "~> 0.3.11"
 end
 
-gem 'jquery-rails'
-gem 'jquery-ui-rails'
+gem 'jquery-rails', '~> 2.3.0'
+gem 'jquery-ui-rails', '~> 4.2.0'
 
 gem 'impressionist'

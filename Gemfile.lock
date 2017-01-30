@@ -115,10 +115,10 @@ GEM
       railties (>= 3.2, < 5)
       responders
     journey (1.0.4)
-    jquery-rails (3.1.4)
+    jquery-rails (2.3.0)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
-    jquery-ui-rails (6.0.1)
+    jquery-ui-rails (4.2.1)
       railties (>= 3.2.16)
     json (1.8.6)
     kaminari (0.17.0)
@@ -254,8 +254,8 @@ DEPENDENCIES
   friendly_id
   groupdate
   impressionist
-  jquery-rails
-  jquery-ui-rails
+  jquery-rails (~> 2.3.0)
+  jquery-ui-rails (~> 4.2.0)
   less-rails (~> 2.5.0)
   meta_request (= 0.2.1)
   meta_search (>= 1.1.0.pre)
