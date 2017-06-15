@@ -39,6 +39,15 @@ class ProductsController < ApplicationController
     redirect_to product_item_url(product, item) + '/mac'
   end
 
+  # get latest relnotes release
+  # GET /products/:id/show_relnotes
+  def show_relnotes
+    product = Product.find(params[:id])
+    item = product.items.where('enclosure_file_name is not null').first # order: 'pub_date desc'
+
+    redirect_to product_item_url(product, item) + '/show_relnotes'
+  end
+
   # GET /products/1.xml
   def showrss
     @product = Product.find(params[:id])
