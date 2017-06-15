@@ -1,5 +1,5 @@
 # config valid only for Capistrano 3.1
-lock '3.1.0'
+#lock '3.1.0'
 
 set :application, 'appcast'
 set :repo_url, "git://github.com/mathieu/appcast-server.git"
@@ -63,7 +63,7 @@ namespace :figaro do
       upload! "config/application.yml", "#{shared_path}/application.yml", via: :scp
     end
   end
- 
+
   desc "Symlink application.yml to the release path"
   task :symlink do
     on roles(:app) do
