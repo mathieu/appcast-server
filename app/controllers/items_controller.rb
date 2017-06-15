@@ -46,7 +46,7 @@ class ItemsController < ApplicationController
 
     impressionist(item,'windows')
 
-    redirect_to generate_url(@_env['SCRIPT_NAME'] + item.enclosure.url, :dl => '0')
+    redirect_to generate_url(@_env['SCRIPT_NAME'] + item.enclosure.url, :dl => '0', :FixForIE => '.exe')
   end
 
   # GET /products/:product_id/items/1/mac
@@ -56,7 +56,7 @@ class ItemsController < ApplicationController
 
     impressionist(item,'mac')
 
-    redirect_to generate_url(@_env['SCRIPT_NAME'] + item.enclosure_mac.url, :dl => '0')
+    redirect_to @_env['SCRIPT_NAME'] + item.enclosure_mac.url
   end
 
   # GET /products/:product_id/items/1/downloads
