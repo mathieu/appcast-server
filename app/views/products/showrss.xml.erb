@@ -3,7 +3,8 @@
 	version="2.0"
 	xmlns:atom="http://www.w3.org/2005/Atom"
 	xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"
-	xmlns:fervor="https://github.com/pypt/fervor"
+  xmlns:fervor="https://github.com/pypt/fervor"
+  xmlns:appcast="https://github.com/mathieu/appcast-server"
 	xmlns:dc="http://purl.org/dc/elements/1.1/">
 
     <channel>
@@ -17,13 +18,14 @@
             <title><%= item.title %></title>
 
             <link><%= product_item_url(@product, item) %>/relnotes</link>
-		    <sparkle:releaseNotesLink><%= product_item_url(@product, item) %>/relnotes</sparkle:releaseNotesLink>
+            <sparkle:releaseNotesLink><%= product_item_url(@product, item) %>/relnotes</sparkle:releaseNotesLink>
 
             <pubDate><%= item.pub_date %></pubDate>
             <% if item.enclosure? %>
             <enclosure url="<%= product_item_url(@product, item) + '/windows' %>"
                        sparkle:version="<%= item.version %>"
                        fervor:version="<%= item.version %>"
+                       appcast:minversion="<%= item.minversion %>"
                        length="<%= item.enclosure_file_size %>"
                        type="<%= item.enclosure_content_type %>"
                        sparkle:md5="<%= item.enclosure_fingerprint %>"
@@ -34,6 +36,7 @@
             <enclosure url="<%= product_item_url(@product, item) + '/mac' %>"
                        sparkle:version="<%= item.version %>"
                        fervor:version="<%= item.version %>"
+                       appcast:minversion="<%= item.minversion %>"
                        length="<%= item.enclosure_mac_file_size %>"
                        type="<%= item.enclosure_mac_content_type %>"
                        fervor:platform="Q_OS_MAC"

@@ -4,6 +4,7 @@
   <tr>
     <th>Title</th>
     <th>Version</th>
+    <th>MinVersion</th>
     <th>Relnotes</th>
     <th>Pub date</th>
     <th>Enclosure name</th>
@@ -17,6 +18,7 @@
   <tr>
     <td><%= item.title %></td>
     <td><%= item.version %></td>
+    <td><%= item.minversion %></td>
     <td><%= link_to product_item_url(@product,item) + '/relnotes', product_item_url(@product,item) + '/relnotes'  %></td>
     <td><%= item.pub_date %></td>
     <td><%= item.enclosure_file_name %></td>
