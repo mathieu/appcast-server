@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140130142224) do
+ActiveRecord::Schema.define(:version => 20171016084442) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -100,6 +100,7 @@ ActiveRecord::Schema.define(:version => 20140130142224) do
     t.string   "enclosure_mac_content_type"
     t.integer  "enclosure_mac_file_size"
     t.datetime "enclosure_mac_updated_at"
+    t.string   "minversion"
   end
 
   add_index "items", ["product_id"], :name => "index_items_on_product_id"
