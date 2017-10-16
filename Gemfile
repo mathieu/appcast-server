@@ -20,10 +20,10 @@ gem 'bourbon', '~> 3.1.8' # failure to find mixin box-shadow
 gem 'meta_search', '>= 1.1.0.pre'
 gem 'friendly_id'
 gem 'paperclip', '~> 3.5.4'
-gem 'tinymce-rails', '~> 4.0.19'
 gem 'figaro', "= 0.7.0"
 gem 'chartkick'
 gem 'net-ssh', '~> 2.8.0'
+gem 'redcarpet', '~> 3.4.0'
 
 group :development do
   gem 'awesome_print'
