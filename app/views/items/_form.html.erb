@@ -21,7 +21,10 @@
         <%= f.label :version, :class => 'control-label' %>
         <%= f.text_field :version, :class => 'controls'  %>
       </div>
-
+      <div class="control-group">
+        <%= f.label :minversion, :class => 'control-label' %>
+        <%= f.text_field :minversion, :class => 'controls'  %>
+      </div>
       <div class="control-group">
         <%= f.label :pub_date, :class => 'control-label' %>
         <script type="text/javascript">
@@ -45,8 +48,7 @@
 
       <div class="control-group relnotes">
         <%= f.label :relnotes , :class => 'control-label' %>
-        <%= f.text_area :relnotes, :rows => 20, :cols => 120, :class => 'controls tinymce'  %>
-        <%= tinymce %>
+        <%= f.text_area :relnotes, :rows => 20, :cols => 120, :class => 'controls'  %>
       </div>
 
 

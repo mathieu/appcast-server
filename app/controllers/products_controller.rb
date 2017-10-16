@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 
-  before_filter :authenticate_user! , :except => [:showrss, :get_mac, :get_windows]
+  before_filter :authenticate_user! , :except => [:showrss, :show_relnotes, :get_mac, :get_windows]
   respond_to :xml
 
   # GET /products
@@ -37,6 +37,15 @@ class ProductsController < ApplicationController
     item = product.items.where('enclosure_mac_file_name is not null').first # order: 'pub_date desc'
 
     redirect_to product_item_url(product, item) + '/mac'
+  end
+
+  # get latest relnotes release
+  # GET /products/:id/relnotes
+  def show_relnotes
+    product = Product.find(params[:id])
+    item = product.items.where('enclosure_file_name is not null').first # order: 'pub_date desc'
+
+    redirect_to product_item_url(product, item) + '/relnotes'
   end
 
   # GET /products/1.xml
