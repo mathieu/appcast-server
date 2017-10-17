@@ -15,7 +15,7 @@ gem 'therubyracer', '~> 0.12.3'
 gem 'less-rails', '~> 2.5.0' #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem 'twitter-bootstrap-rails', '~> 2.2.7'
 gem 'bootstrap-datepicker-rails'
-gem 'activeadmin', '= 0.5.1' # http://0.0.0.0:3000/admin
+gem 'activeadmin', '= 0.6.6' # http://0.0.0.0:3000/admin
 gem 'bourbon', '~> 3.1.8' # failure to find mixin box-shadow
 gem 'meta_search', '>= 1.1.0.pre'
 gem 'friendly_id'
