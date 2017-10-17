@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-#ruby '2.0.0'
+ruby '2.3.4'
 
 gem 'rails', '3.2.20'
 
@@ -65,4 +65,4 @@ end
 gem 'jquery-rails', '~> 2.3.0'
 gem 'jquery-ui-rails', '~> 4.2.0'
 
-gem 'impressionist', '= 1.5.1'
+gem 'impressionist', '= 1.5.2'

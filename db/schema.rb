@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20171016084442) do
+ActiveRecord::Schema.define(:version => 20171017085622) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -71,12 +71,14 @@ ActiveRecord::Schema.define(:version => 20171016084442) do
     t.text     "referrer"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
+    t.text     "params"
   end
 
   add_index "impressions", ["controller_name", "action_name", "ip_address"], :name => "controlleraction_ip_index"
   add_index "impressions", ["controller_name", "action_name", "request_hash"], :name => "controlleraction_request_index"
   add_index "impressions", ["controller_name", "action_name", "session_hash"], :name => "controlleraction_session_index"
   add_index "impressions", ["impressionable_type", "impressionable_id", "ip_address"], :name => "poly_ip_index"
+  add_index "impressions", ["impressionable_type", "impressionable_id", "params"], :name => "poly_params_request_index"
   add_index "impressions", ["impressionable_type", "impressionable_id", "request_hash"], :name => "poly_request_index"
   add_index "impressions", ["impressionable_type", "impressionable_id", "session_hash"], :name => "poly_session_index"
   add_index "impressions", ["impressionable_type", "message", "impressionable_id"], :name => "impressionable_type_message_index"
