@@ -11,11 +11,11 @@
 
 role :web, "10.3.3.110"
 role :app, "10.3.3.110"
-role :db,  "10.3.3.110", :primary => true 
+role :db,  "10.3.3.110", :primary => true
 
 set :rvm_type, :system
-set :rvm_bin_path, "/usr/local/rvm/bin"
-set :rvm_path, "/usr/local/rvm/"
+# set :rvm_bin_path, "/usr/local/rvm/bin"
+# set :rvm_path, "/usr/local/rvm/"
 
 # Extended Server Syntax
 # ======================

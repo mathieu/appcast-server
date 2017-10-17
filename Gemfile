@@ -35,6 +35,7 @@ group :development do
   gem 'thin'
   # deploy using capistrano
   gem 'capistrano', '~> 3.9.1', require: false
+  gem 'capistrano-rvm', require: false
   gem 'capistrano-rails',   '~> 1.3.0', require: false
   gem 'capistrano-bundler', '~> 1.3.0', require: false
   # gem security scanner
