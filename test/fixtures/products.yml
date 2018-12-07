@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  title: MyString
+  title: My first product
   name: MyString
   description: MyText
 
 two:
-  title: MyString
+  title: My second product
   name: MyString
   description: MyText

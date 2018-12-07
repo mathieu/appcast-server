@@ -6,10 +6,14 @@
 #
 user_one: 
   email: one@example.com
+  encrypted_password: <%= User.new.send(:password_digest, 'one') %>
+  products: one, two
 
 # column: value
 #
 user_two:   
   email: two@example.com
+  encrypted_password: <%= User.new.send(:password_digest, 'two') %>
+  products: two
 
 #  column: value
